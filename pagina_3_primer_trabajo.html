@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PRIMERA PR&Aacute;CTICA tres</title>
+    <style>
+       
+        body {
+            background-color: #ece2c6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        video {
+            width: 80%;
+            max-width: 900px;  
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+            margin-bottom: 30px; 
+        }
+
+ 
+        .controles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px; /
+        }
+
+    
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4a4538; 
+            color: white;
+            border: none;
+            border-radius: 8px;
+            transition: all 0.3s ease; 
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+      
+        button:hover {
+            background-color: #7d7563;
+            transform: translateY(-3px); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <video id="eje" autoplay muted controls>
+        <source src="perro.mp4" type="video/mp4">
+        
+    </video>
+
+    <div class="controles">
+        <button onclick="velocidad(0)" type="button">Parar</button>
+        <button onclick="velocidad(1)" type="button">Reproducir</button>
+        <button onclick="velocidad(0.5)" type="button">x0.5</button>
+        <button onclick="velocidad(2)" type="button">x2</button>
+        <button onclick="velocidad(4)" type="button">x4</button>
+        <button onclick="velocidad(6)" type="button">x6</button>
+    </div>
+
+    <script>
+        var vi = document.getElementById('eje');
+        function velocidad(p) {
+            if (p === 0) {
+                vi.pause();
+            } else {
+                vi.play();
+                vi.playbackRate = p;
+            }
+        }
+    </script>
+
+</body>
+</html>
